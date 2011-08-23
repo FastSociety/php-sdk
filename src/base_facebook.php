@@ -724,7 +724,7 @@ abstract class BaseFacebook
   protected function _graph($path, $method = 'GET', $params = array()) {
     if (is_array($method) && empty($params)) {
       $params = $method;
-      $method = 'GET';
+      $method = isset($params['method']) ? $params['method'] : 'GET';
     }
     $params['method'] = $method; // method override as we always do a POST
 
